@@ -183,8 +183,8 @@ public class Server {
 
         public void stopClient() {
             isRunning = false;
-            interrupt();  // Прерываем поток
-            cleanUp();    // Закрываем все ресурсы
+            interrupt();
+            cleanUp();
         }
 
         private void cleanUp() {
@@ -287,13 +287,6 @@ public class Server {
             secondPlayerUsername = null;
             firstPlayerReady = false;
             secondPlayerReady = false;
-            //player.toBegin();
-
-//            synchronized (clients) {
-//                for (ClientHandler client : clients) {
-//                    client.stopClient();
-//                }
-//            }
         }
 
     }

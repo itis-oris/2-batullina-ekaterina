@@ -25,18 +25,15 @@ public class PreGameFrame extends JFrame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 
-        // Панель для центра
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(5, 1, 10, 10));
         panel.setBackground(new Color(245, 245, 245));
 
-        // Заголовок с приветствием
         JLabel welcomeLabel = new JLabel("Welcome, " + username + "!", JLabel.CENTER);
         welcomeLabel.setFont(new Font("Arial", Font.BOLD, 24));
         welcomeLabel.setForeground(Color.BLACK);
         panel.add(welcomeLabel);
 
-        // Дропдаун для выбора сложности
         String[] difficulties = {"Easy", "Medium", "Hard"};
         difficultyComboBox = new JComboBox<>(difficulties);
         difficultyComboBox.setFont(new Font("Arial", Font.PLAIN, 16));
@@ -45,7 +42,6 @@ public class PreGameFrame extends JFrame {
         difficultyComboBox.setPreferredSize(new Dimension(150, 40));
         panel.add(difficultyComboBox);
 
-        // Кнопка помощи
         helpButton = new JButton("Help");
         helpButton.setFont(new Font("Arial", Font.PLAIN, 14));
         helpButton.setBackground(new Color(230, 230, 230));
@@ -54,7 +50,6 @@ public class PreGameFrame extends JFrame {
         helpButton.setBorder(BorderFactory.createLineBorder(new Color(200, 200, 200)));
         helpButton.addActionListener(e -> showHelp());
 
-        // Эффект при наведении на кнопку Help
         helpButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 helpButton.setBackground(new Color(210, 210, 210));
@@ -65,7 +60,6 @@ public class PreGameFrame extends JFrame {
         });
         panel.add(helpButton);
 
-        // Кнопка начала игры
         startButton = new JButton("Start Game");
         startButton.setFont(new Font("Arial", Font.BOLD, 16));
         startButton.setBackground(new Color(0, 123, 255));
@@ -84,7 +78,6 @@ public class PreGameFrame extends JFrame {
             }
         });
         panel.add(startButton);
-
 
         frame.add(panel, BorderLayout.CENTER);
 
@@ -109,8 +102,6 @@ public class PreGameFrame extends JFrame {
                 "Game Rules", JOptionPane.INFORMATION_MESSAGE);
     }
 
-
-    // Запуск игры
     private void startGame() {
         if (!isReady) {
             isReady = true;
